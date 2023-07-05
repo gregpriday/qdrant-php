@@ -8,7 +8,7 @@ namespace Qdrant\Models;
 
 use Qdrant\Models\Traits\ProtectedPropertyAccessor;
 
-class VectorStruct
+class VectorStruct implements VectorStructInterface
 {
     use ProtectedPropertyAccessor;
 
