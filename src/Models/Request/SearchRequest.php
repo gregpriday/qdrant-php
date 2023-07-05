@@ -31,6 +31,8 @@ class SearchRequest
 
     protected ?string $name = null;
 
+    protected ?float $scoreThreshold = null;
+
     public function __construct(VectorStructInterface $vector)
     {
         $this->vector = $vector;
