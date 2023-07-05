@@ -50,6 +50,13 @@ class SearchRequest
         return $this;
     }
 
+    public function setScoreThreshold(float $scoreThreshold): static
+    {
+        $this->scoreThreshold = $scoreThreshold;
+
+        return $this;
+    }
+
     public function setParams(array $params): static
     {
         $this->params = $params;
@@ -92,6 +99,9 @@ class SearchRequest
         ];
         if ($this->filter !== null && $this->filter->toArray()) {
             $body['filter'] = $this->filter->toArray();
+        }
+        if($this->scoreThreshold) {
+            $body['score_threshold'] = $this->scoreThreshold;
         }
         if ($this->params) {
             $body['params'] = $this->params;
