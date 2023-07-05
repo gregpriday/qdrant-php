@@ -9,9 +9,12 @@ namespace Qdrant\Models\Request;
 
 use Qdrant\Models\Filter\Filter;
 use Qdrant\Models\VectorStructInterface;
+use Qdrant\Models\Traits\ProtectedPropertyAccessor;
 
 class SearchRequest
 {
+    use ProtectedPropertyAccessor;
+
     protected ?Filter $filter = null;
 
     protected array $params = [];
